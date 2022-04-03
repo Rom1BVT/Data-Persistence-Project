@@ -12,11 +12,15 @@ public class MenuUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        DataPersistence.Instance.playerName = null;
     }
 
     public void Play()
     {
+        if (DataPersistence.Instance.playerName == null)
+        {
+            DataPersistence.Instance.playerName = $"anonymous";
+        }
         SceneManager.LoadScene(1);
     }
     public void Exit()
@@ -28,4 +32,8 @@ public class MenuUIManager : MonoBehaviour
 #endif
     }
 
+    public void SetPlayerName(string entry)
+    {
+        DataPersistence.Instance.playerName = entry;
+    }
 }
