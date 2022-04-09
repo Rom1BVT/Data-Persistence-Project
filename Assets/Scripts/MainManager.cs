@@ -97,6 +97,7 @@ public class MainManager : MonoBehaviour
             DataPersistence.Instance.bestPlayer = DataPersistence.Instance.playerName;
             bestScoreText.text = $"Best Score: {DataPersistence.Instance.bestPlayer} = {DataPersistence.Instance.bestScore}";
         }
+        DataPersistence.Instance.SaveScore();
     }
 
 
